@@ -1,0 +1,24 @@
+SESSION08
+Bài 1 : Xử lý Log máy chủ dung lượng lớn
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1: Phân tích.
+
++ Notepad bị treo: Notepad nạp toàn bộ tệp 800MB vào RAM cùng lúc nên tràn bộ nhớ và đơ giao diện.
++ cat lỗi trong CMD: cat là lệnh của Linux, CMD cũ không có lệnh này (CMD dùng type).
++ cat chạy trong PowerShell: cat là alias (tên gọi tắt) của Get-Content, và Get-Content đọc theo luồng, từng dòng một, không nạp cả tệp vào RAM.
+
+Phần 2: Hoàn thiện.
+
+Xem toàn bộ nội dung:
+powershell
+
+Get-Content server_log_800MB.log
+
+Xem 10 dòng cuối:
+powershell
+
+Get-Content server_log_800MB.log -Tail 10
